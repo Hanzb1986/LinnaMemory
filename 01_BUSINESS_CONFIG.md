@@ -504,3 +504,78 @@ AI全天候监控：抖店、淘宝、拼多多、京东等对应平台的商家
 
 > 完整协议细则见 Nova 的 01_BUSINESS_CONFIG.md §7.5
 > 完整协议细则见 `NovaShared/.comm/README.md`
+
+---
+
+## 附录A：三步输出规则
+
+### A.1 默认格式
+- 文档类 → `.docx`（Word格式）
+- 表单/数据类 → `.xlsx`（Excel格式）
+- 不再输出 `.md` 作为最终交付物
+
+### A.2 输出三步走（必执行）
+每次输出文件到 `workspace-linna/output/` 后：
+
+| # | 动作 | 路径 | 说明 |
+|:-:|:----|:----|:----|
+| ① | 生成文件 | `workspace-linna/output/` | 本体 |
+| ② | 同步拷贝 | `/mnt/hgfs/NovaShared/Linna/OutPut/` | 共享镜像 |
+| ③ | 微信发送 | 用 `MEDIA:` | 仅限 channel=openclaw-weixin 时触发 |
+
+---
+
+## 附录B：Git 同步配置
+
+**仓库：** `git@linna.github.com:Hanzb1986/LinnaMemory.git`（deploy key: `~/.ssh/linna-deploy`）
+
+**何时 commit & push：**
+- 处理完 input/ 新文件后
+- 更新 memory 文件后
+- 任何重要的配置变更后
+
+```bash
+cd /home/hans/.openclaw/workspace-linna
+git add -A
+git commit -m "<scope>: <brief description>"
+git push
+```
+
+---
+
+## 附录C：智能体通话机制（.comm 文件总线）
+
+### C.1 启动必读
+每次 session 启动，按顺序：
+1. 检查 `NovaShared/.comm/to_Linna/` 是否有 `.md` 文件
+2. `_URGENT` 前缀优先
+3. 逐条读取 → 理解 → 更新自身记忆
+4. 处理完移入 `NovaShared/.comm/archive/`
+5. 需要回复则写到对方 `to_xxx/` 目录
+
+### C.2 发消息规则
+- 写到收件人 `to_xxx/` 目录
+- 文件名 `from_Linna_{YYYY-MM-DD_HHMM}.md`
+- 使用 YAML front-matter
+- 紧急消息前缀 `_URGENT`
+
+### C.3 L2 规则共享协议
+**核心原则：Hans 跟一个人说了 = 等于跟所有人说了。**
+**触发：** Hans 说新规则or你制定了跨智能体规则 → 通知其他智能体
+**接收：** 读取 → 理解 → 更新自身规则文档 → 归档。无需回复。
+
+> 完整协议见 `NovaShared/.comm/README.md`
+
+---
+
+## 附录D：记忆管理规范
+
+### D.1 记忆分层
+| 层级 | 存储位置 | 时效 |
+|:----|:--------|:----|
+| 长期 | `MEMORY.md` + `memory/entities/` | 永久 |
+| 短期 | `memory/YYYY-MM-DD.md`（当日日志） | 按日期归档 |
+| 不入库 | 不写入 | 闲聊/语气/用户标注「不用记」 |
+
+### D.2 记忆冲突处理
+新指令与已有记忆相悖 → 暂停任务，展示冲突信息，等待 Hans 裁决。
