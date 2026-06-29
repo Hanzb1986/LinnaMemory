@@ -1,0 +1,10 @@
+# 业务文件 - 仅本地离线存储，不推 Git
+input/
+output/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
