@@ -1,74 +1,44 @@
-# TOOLS.md — Linna 工作环境配置
+# TOOLS.md - Local Notes
 
-## 📂 输入/输出目录（五大模块全覆盖）
+Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
-### input/（Hans投递 → Linna读取处理）
+## What Goes Here
 
-| 目录 | 用途 |
-|:----|:------|
-| `finance/` | 财税政策原文、公告、通知、凭证底稿、报税资料 |
-| `hr/` | 用工政策、判例、模板、制度底稿、人事资料 |
-| `business/` | 电商规则、仓储规范、业务单据、流程底稿 |
-| `product/` | 产品资质、参数文档、新品资料、品类规则、定价底稿 |
-| `quality/` | 行业质检标准、品控规则、质检记录、售后质量凭证 |
-| `法规文件/` | 法律法规原文、平台公告截图、合规文件 |
-| `平台规则/` | 各平台商家规则、处罚细则、禁词表 |
-| `供应商资料/` | 供应商信息、报价单、资质文件 |
-| `商品资料/` | 产品参数、质检报告、实拍图 |
-| `运营数据/` | 经营报表、订单数据、广告数据 |
-| `配置/` | API密钥配置文件、底层参数配置 |
-| `其他/` | 未归类的文件 |
+Things like:
 
-### output/（Linna生成 → Hans取用）
+- Camera names and locations
+- SSH hosts and aliases
+- Preferred voices for TTS
+- Speaker/room names
+- Device nicknames
+- Anything environment-specific
 
-| 目录 | 产出类型 | 文件格式 |
-|:----|:---------|:---------|
-| `finance/` | 财税合规报告、税前扣除清单、报税备查资料、财税台账 | DOCX+PDF+MD |
-| `hr/` | 人事制度、用工台账、合规报告、合同范本 | DOCX+PDF+XLSX+MD |
-| `business/` | 正式SOP、库存台账、订单报表、业务合规手册 | DOCX+PDF+XLSX+MD |
-| `product/` | 产品管理制度、上架SOP、产品台账、合规报告、资质汇总 | DOCX+PDF+XLSX+MD |
-| `quality/` | 品控制度、质检SOP、质量台账、溯源报告、整改复盘 | DOCX+PDF+XLSX+MD |
-| `archive/` | 月度/季度/年度汇总报告、跨模块综合档案 | 综合 |
-| `学习笔记/` | 法律深读笔记 | MD |
+## Examples
 
-### 📌 红线：output vs input 分工（2026-06-30 铁律）
+```markdown
+### Cameras
 
-| 目录 | 用途 | 规则 |
-|:----|:-----|:-----|
-| **input/** | 我的资料仓库 | 原材料、我的分析笔记、中间产物，全部放这里 |
-| **output/** | Hans取文件的窗口 | **只放Hans主动找我要的成品文件**，其他一概不放 |
-| 共享 OutPut | 同步至其他智能体 | **必须和本地 output 完全一致**，不同步input里的东西 |
+- living-room → Main area, 180° wide angle
+- front-door → Entrance, motion-triggered
 
-**死记：不要往output放任何Hans没找我要的东西。**
+### SSH
 
-### 输出文件格式标准
+- home-server → 192.168.1.100, user: admin
 
-| 用途 | 格式 | 说明 |
-|:----|:----|:-----|
-| HTML优先 | `.html` | 优先输出网页格式查看 |
-| 正式档/报税/稽核 | `.pdf` | 标准PDF正式版 |
-| 可编辑底稿 | `.docx` | Word可编辑格式 |
-| 台账/报表/清单 | `.xlsx` | Excel可筛选可报送 |
-| 原始溯源档案 | `.md` | 永久底层留存 |
+### TTS
+
+- Preferred voice: "Nova" (warm, slightly British)
+- Default speaker: Kitchen HomePod
+```
+
+## Why Separate?
+
+Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
 
 ---
 
-## 📋 文件命名规则
+Add whatever helps you do your job. This is your cheat sheet.
 
-`{时间戳}_{版本号}_{文件名称}_{批次号}.{格式}`
+## Related
 
-- 不删除旧版本，仅新增新版本
-- 批次文件标注批次编号
-- 档案备注标注更新差异、失效时间、迭代原因
-
----
-
-## 平台API
-
-- 店铺平台：待配置
-- 供应商平台：待配置
-
-## 默认参数
-
-- 商品分类：待Hans确定
-- 代发供应商：待确定
+- [Agent workspace](/concepts/agent-workspace)
