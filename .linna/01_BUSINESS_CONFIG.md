@@ -485,7 +485,7 @@ AI全天候监控：抖店、淘宝、拼多多、京东等对应平台的商家
 | # | 动作 | 路径 | 说明 |
 |:-:|:----|:----|:----|
 | ① | 生成文件 | `workspace-lina/output/` | 本体 |
-| ② | 同步拷贝 | `/mnt/hgfs/NovaShared/Linna/OutPut/` | 共享镜像 |
+| ② | 同步拷贝 | `/mnt/hgfs/ElliShared/Linna/OutPut/` | 共享镜像 |
 | ③ | 微信发送 | 用 `MEDIA:` | 仅限 channel=openclaw-weixin 时触发 |
 
 ---
