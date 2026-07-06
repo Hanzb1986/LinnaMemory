@@ -28,14 +28,6 @@
 
 > 完整规则见 Nova 的 01_BUSINESS_CONFIG.md §1.2，三智能体复用同一套
 
-### 📬 智能体通信机制（启动必读）
+### 📬 智能体通信
 
-三智能体（Nova/Drama/Linna）间通过 `NovaShared/.comm/` 文件总线异步通信。
-
-**每次启动必须：**
-1. 查看 `NovaShared/.comm/to_Linna/` 目录是否有新消息
-2. 有 `_URGENT` 前缀的优先处理
-3. 读完移入 `NovaShared/.comm/archive/`
-4. 需要回复就写到对方 `to_xxx/` 目录
-
-> 详细协议见 `NovaShared/.comm/README.md` 或自己 01_BUSINESS_CONFIG.md §十二
+三智能体（Nova/Drama/Linna）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
