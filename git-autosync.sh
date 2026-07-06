@@ -3,7 +3,7 @@
 # 检测工作区变更后自动 commit + push
 # 部署方式：cron 每5分钟执行一次
 
-WORKSPACE="/home/hans/.openclaw/workspace-linna"
+WORKSPACE="/home/hans/.openclaw/workspace-lina"
 cd "$WORKSPACE" || exit 1
 
 # 检查是否有变更

@@ -73,6 +73,6 @@
 
 ## Git Autosync
 
-**脚本：** `/home/hans/.openclaw/workspace-linna/git-autosync.sh`
+**脚本：** `/home/hans/.openclaw/workspace-lina/git-autosync.sh`
 **cron：** 每5分钟自动检测变更并 push
 **实时规则：** 每次重要的配置/文件变更后，会话内手动 git push（兜底）+ cron 5分钟二次保障

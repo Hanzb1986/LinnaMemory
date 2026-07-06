@@ -9,20 +9,20 @@
 |:------|:----------|:-----------|:--------------|
 | Nova 🐚 | `NovaShared/Nova/Input` | `NovaShared/Nova/OutPut` | workspace/input + workspace/output |
 | Drama 🎬 | `NovaShared/Drama/Input` | `NovaShared/Drama/OutPut` | workspace-drama/input + workspace-drama/output |
-| Linna 🛍️ | **`NovaShared/Linna/Input`** | **`NovaShared/Linna/OutPut`** | **workspace-linna/input + workspace-linna/output** |
+| Linna 🛍️ | **`NovaShared/Linna/Input`** | **`NovaShared/Linna/OutPut`** | **workspace-lina/input + workspace-lina/output** |
 
 ### 给你的规则变化
 1. **投递入口：** 你用的共享 Input 是 `NovaShared/Linna/Input/`，不是老的 `NovaShared/Input/`
 2. **成品出口：** 同步到 `NovaShared/Linna/OutPut/`
-3. **本地不变：** 你本地 `workspace-linna/input/` 和 `workspace-linna/output/` 照旧
+3. **本地不变：** 你本地 `workspace-lina/input/` 和 `workspace-lina/output/` 照旧
 4. **流程不变：** 检测 Input → 拷贝到本地 → 删除共享源文件 → 本地处理 → 成品同步到共享 OutPut
 5. **隔离：** 你不能读写 Nova/Drama 的目录，反之亦然
 
 ### ⚠️ 注意：你的工作区路径已修复
-之前 openclaw.json 里配的是 `workspace-gain`（不存在），已改为 `workspace-linna`。下次启动就能正常工作了。
+之前 openclaw.json 里配的是 `workspace-gain`（不存在），后改为 `workspace-linna`。本日已迁移至 `workspace-lina`。
 
 ### 输出文件三步规则（你也要执行）
-① 生成文件到自身 `workspace-linna/output/`
+① 生成文件到自身 `workspace-lina/output/`
 ② 同步拷贝到共享 `NovaShared/Linna/OutPut/`
 ③ 微信渠道时额外发 MEDIA（仅 channel=openclaw-weixin 时触发）
 

@@ -480,11 +480,11 @@ AI全天候监控：抖店、淘宝、拼多多、京东等对应平台的商家
 - 不再输出 `.md` 作为最终交付物
 
 ### A.2 输出三步走（必执行）
-每次输出文件到 `workspace-linna/output/` 后：
+每次输出文件到 `workspace-lina/output/` 后：
 
 | # | 动作 | 路径 | 说明 |
 |:-:|:----|:----|:----|
-| ① | 生成文件 | `workspace-linna/output/` | 本体 |
+| ① | 生成文件 | `workspace-lina/output/` | 本体 |
 | ② | 同步拷贝 | `/mnt/hgfs/NovaShared/Linna/OutPut/` | 共享镜像 |
 | ③ | 微信发送 | 用 `MEDIA:` | 仅限 channel=openclaw-weixin 时触发 |
 
@@ -500,7 +500,7 @@ AI全天候监控：抖店、淘宝、拼多多、京东等对应平台的商家
 - 任何重要的配置变更后
 
 ```bash
-cd /home/hans/.openclaw/workspace-linna
+cd /home/hans/.openclaw/workspace-lina
 git add -A
 git commit -m "<scope>: <brief description>"
 git push
