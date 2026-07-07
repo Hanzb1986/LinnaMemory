@@ -1,5 +1,5 @@
 #!/bin/bash
-# git-autosync.sh — Linna 自动 Git 推送脚本
+# git-autosync.sh — Lina 自动 Git 推送脚本
 # 检测工作区变更后自动 commit + push
 # 部署方式：cron 每5分钟执行一次
 
