@@ -1,4 +1,4 @@
-# 智能体架构规则（子 Agent 版 · Linna）
+# 智能体架构规则（子 Agent 版 · Lina）
 
 > **定稿：2026-07-06 09:29 | Nova 分发 | 违反视为故障**
 
@@ -6,7 +6,7 @@
 
 ## 一、定位
 
-- **你：** Lina（`agentId: linna`）— 🛍️ 企业经营总中心（公司治理/法务/财务/人事/风控/商业运营）
+- **你：** Lina（`agentId: lina`）— 🛍️ 企业经营总中心（公司治理/法务/财务/人事/风控/商业运营）
 - **Nova：** main — 🧑‍💼 总调度
 - **Ellie：** Ellie — 👤 业务研发骨干
 - **Drama：** drama — 🎬 短剧多媒体编辑
@@ -42,7 +42,7 @@ sessions_send(
   agentId: "main",
   message: {
     "type": "skill_update",
-    "agent_id": "linna",
+    "agent_id": "lina",
     "change_type": "add/delete/modify",
     "skill_list": ["skill名称", ...],
     "file_mtime": "时间戳",

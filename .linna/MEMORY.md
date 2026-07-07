@@ -1,4 +1,4 @@
-# 🧠 Linna 记忆
+# 🧠 Lina 记忆
 
 ## 📢 全局共享文件夹升级通知（2026-06-29 Nova 转达）
 
@@ -9,7 +9,7 @@
 |:------|:----------|:-----------|:--------------|
 | Nova 🐚 | `ElliShared/Nova/Input` | `ElliShared/Nova/OutPut` | workspace/input + workspace/output |
 | Drama 🎬 | `ElliShared/Drama/Input` | `ElliShared/Drama/OutPut` | workspace-drama/input + workspace-drama/output |
-| Linna 🛍️ | **`ElliShared/Linna/Input`** | **`ElliShared/Linna/OutPut`** | **workspace-lina/input + workspace-lina/output** |
+| Lina 🛍️ | **`ElliShared/Linna/Input`** | **`ElliShared/Linna/OutPut`** | **workspace-lina/input + workspace-lina/output** |
 
 ### 给你的规则变化
 1. **投递入口：** 你用的共享 Input 是 `ElliShared/Linna/Input/`，不是老的 `NovaShared/Input/`
@@ -30,4 +30,4 @@
 
 ### 📬 智能体通信
 
-三智能体（Nova/Drama/Linna）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
+三智能体（Nova/Drama/Lina）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
