@@ -21,14 +21,16 @@
 
 ### output/（Lina生成 → Hans取用）
 
-| 目录 | 产出类型 | 文件格式 |
+| 目录 | 产出类型 | 文件格式（*仅Hans明确要求时出xlsx） |
 |:----|:---------|:---------|
 | `finance/` | 财税合规报告、税前扣除清单、报税备查资料、财税台账 | DOCX+PDF+MD |
-| `hr/` | 人事制度、用工台账、合规报告、合同范本 | DOCX+PDF+XLSX+MD |
-| `business/` | 正式SOP、库存台账、订单报表、业务合规手册 | DOCX+PDF+XLSX+MD |
-| `product/` | 产品管理制度、上架SOP、产品台账、合规报告、资质汇总 | DOCX+PDF+XLSX+MD |
-| `quality/` | 品控制度、质检SOP、质量台账、溯源报告、整改复盘 | DOCX+PDF+XLSX+MD |
+| `hr/` | 人事制度、用工台账、合规报告、合同范本 | DOCX+PDF+XLSX¹+MD |
+| `business/` | 正式SOP、库存台账、订单报表、业务合规手册 | DOCX+PDF+XLSX¹+MD |
+| `product/` | 产品管理制度、上架SOP、产品台账、合规报告、资质汇总 | DOCX+PDF+XLSX¹+MD |
+| `quality/` | 品控制度、质检SOP、质量台账、溯源报告、整改复盘 | DOCX+PDF+XLSX¹+MD |
 | `archive/` | 月度/季度/年度汇总报告、跨模块综合档案 | 综合 |
+
+> ¹ XLSX 仅当 Hans 明确要求 Excel 时使用；默认表单/数据类输出 CSV（UTF-8），详见下方格式标准表。
 ### 📌 红线：output vs input 分工（2026-06-30 铁律）
 
 | 目录 | 用途 | 规则 |
