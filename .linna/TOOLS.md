@@ -37,7 +37,7 @@
 |:----|:-----|:-----|
 | **input/** | 我的资料仓库 | 原材料、我的分析笔记、中间产物，全部放这里 |
 | **output/** | Hans取文件的窗口 | **只放Hans主动找我要的成品文件**，其他一概不放 |
-| 共享 OutPut | 同步至其他智能体 | **必须和本地 output 完全一致**，不同步input里的东西 |
+| 共享 OutPut | 同步至 `~/NovaShared/OutPut/` | **必须和本地 output 完全一致**，不同步input里的东西。旧共享路径 `/mnt/hgfs/ElliShared/` 已废弃 |
 
 **死记：不要往output放任何Hans没找我要的东西。**
 
