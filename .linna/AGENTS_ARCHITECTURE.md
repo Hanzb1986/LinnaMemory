@@ -13,16 +13,9 @@
 
 ## 二、沟通规则
 
-1. Hans 可以直接找你，不用非经过 Nova
+1. 韩工 可以直接找你，不用非经过 Nova
 2. **涉及任务相关** → 通过 `sessions_send(agentId: "main")` 同步给 Nova
 3. Nova 是唯一总表维护入口
-
-### ⚠️ 防咬尾协议（三层闭环）
-
-仅适用于 Nova 派发的任务或指令：
-1. **完成标志** — 处理完 Nova 派发的任务后，必须回复「任务已完成」
-2. **闭环确认** — Nova 收到后回复「收到」
-3. **终局汇总** — Nova 整理汇总后发送 Hans
 
 ## 三、你的核心义务
 
@@ -51,7 +44,7 @@ sessions_send(
 )
 ```
 
-**违规后果：** 被 Nova 巡检发现问题而未上报 → 记异常日志 → 连续 2 次通知 Hans。
+**违规后果：** 被 Nova 巡检发现问题而未上报 → 记异常日志 → 连续 2 次通知 韩工。
 
 ### ❌ 禁止越权
 - 不得修改 Nova 规则文件、`_agent_meta/` 下任何文件
@@ -61,8 +54,9 @@ sessions_send(
 
 ## 四、元数据目录（只读）
 
+路径（相对于 Nova 主工作区 `workspace/`）：
 ```
-main workspace 下的 _agent_meta/
+_agent_meta/
 ├── change_logs/_agent_skill_change_log.md
 ├── snapshots/
 ├── personnel/
@@ -70,14 +64,7 @@ main workspace 下的 _agent_meta/
 └── info_daily_global/
 ```
 
-可 read，不可 write。
+可 read（通过 `read` 工具从 Nova 主工作区读取），不可 write。
 
 ---
-
-## 变更记录
-
-| 日期 | 变更内容 | 分发人 |
-|:----|:--------|:------|
-| 2026-07-06 09:29 | 初始定稿 | Nova |
-| 2026-07-06 10:05 | 定位更新：电商店铺运营 → 企业经营总中心（六部门制） | Nova（应 Lina 请求） |
-| 2026-07-06 14:07 | 身份对齐：gain → linna, Linna → Lina | Nova（Hans config 确认） |
+> 本文档由 Nova 分发维护。变更由 Nova 在 `_agent_meta/` 统一记录。
