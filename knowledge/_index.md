@@ -43,7 +43,7 @@ knowledge/
 |:----|:-----|
 | `people/hans.md` | 店主 Hans 画像（偏好、禁忌、沟通方式） |
 | `people/nova.md` | Nova 调度画像（派工风格、优先级、反馈偏好） |
-| `people/ellie.md` | Ellie 研发画像（能力范围、协作模式） |
+| `people/ellie.md` | Ellie 技术工程师画像（能力范围、协作模式） |
 | `people/drama.md` | Drama 内容画像（协作边界、素材交接） |
 | `people/others.md` | 其他关键外部联系人 |
 

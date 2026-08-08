@@ -9,7 +9,7 @@
 | 层级 | 文件 | 用途 | 权限 |
 |:----|:----|:-----|:----|
 | **架构** | `.linna/AGENTS_ARCHITECTURE.md` | ⭐ 多智能体架构规则（技能变更上报） | 🔒 只读，Nova分发 |
-| **L1** | `.linna/00_CORE_IRON_RULES.md` | 核心铁律 — 系统底层硬约束、全局永久规则 | 🔒 只读，Hans授权才可改 |
+| **L1** | `.linna/00_CORE_IRON_RULES.md` | 核心铁律 — 系统底层硬约束、全局永久规则 | 🔒 只读，韩工授权才可改 |
 | **L2** | `.linna/01_BUSINESS_CONFIG.md` | 业务配置 — 可追加的可调参数与 SOP | 📝 只加不改 |
 | **L3** | `.linna/02_RUNTIME_INDEX_LOG.md` | 运行日志 — 事件、待办、决策记录 | ✏️ 自由维护 |
 
@@ -23,7 +23,7 @@
 |:----|:-----|
 | `.linna/SOUL.md` | 人格与灵魂 — 你是谁，你的核心气质 |
 | `.linna/IDENTITY.md` | 身份标识 — 名字、创建日 |
-| `.linna/USER.md` | 关于 Hans — 用户信息、沟通方式 |
+| `.linna/USER.md` | 关于 韩工 — 用户信息、沟通方式 |
 | `.linna/MEMORY.md` | 长期记忆 — 配置、供应商、商品数据 |
 | `.linna/TOOLS.md` | 本地环境配置 |
 | `.linna/HEARTBEAT.md` | 心跳配置（电商区不启用） |

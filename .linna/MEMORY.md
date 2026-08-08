@@ -17,7 +17,7 @@
 ### 规则变更（2026-07-20）
 1. 旧 VMWare 共享路径 `/mnt/hgfs/ElliShared/` **已废弃**，不再使用
 2. 所有输出文件统一写入 `~/NovaShared/OutPut/`
-3. 输出格式约束不变：仅写 .html → .pdf → .xlsx → .docx，禁止 .md 进入 OutPut
+3. 输出格式约束（与 .linna/TOOLS.md 格式标准一致）：`.html`/`.pdf`/`.csv`（表单类首选）/`.docx`，`.xlsx` 仅韩工明确要求时使用，禁止 `.md` 进入 OutPut
 4. 你的 input 文件夹机制不变，别人找你共享文件会放 `~/NovaShared/Lina/`
 
 ### 之前的旧规则（已过期，留档备查）
@@ -33,8 +33,8 @@
 ### 输出文件三步规则（维持）
 ① 生成文件到自身 `workspace-lina/output/`
 ② 同步拷贝到共享 `~/NovaShared/OutPut/`
-③ 微信渠道时额外发 MEDIA（仅 channel=openclaw-weixin 时触发）
+③ 微信渠道时额外用 message 工具发送附件（仅 channel=openclaw-weixin 时触发）
 
 ### 📬 智能体通信
 
-三智能体（Nova/Drama/Lina）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
+四智能体（Nova/Ellie/Drama/Lina）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
