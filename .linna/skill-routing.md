@@ -4,7 +4,7 @@
 > **用途：** 能力域 → skill/能力映射 → 入口触发 → 执行编排 → 产出/出口 → 依赖数据的完整路由。
 > **自持：** 链路由我维护、由我执行；Nova 只做任务调度，不插手技能链路细节。
 > **联动：** 能力登记见 `skills-index.md`（本文件引用其能力 key）；格式遵循 `nova/skill-format-standard.md`；缺能力时按该标准自建 skill 补位，并同步更新本文件 + skills-index.md。
-> **覆盖：** 六部门制业务能力 6 域 + 工具能力 9 域。
+> **覆盖：** 六部门制业务能力 6 域 + 工具能力 10 域。
 
 ---
 
@@ -174,13 +174,44 @@
 | 产出/出口 | commit 记录 |
 | 依赖数据 | TOOLS.md（Git 段落） |
 
+### 16. 共享知识中枢（`knowledge-share`）
+
+| 环节 | 内容 |
+|:---|:-----|
+| 入口触发 | 产生可复用经营合规沉淀（法规库摘要/平台规则/财务人事制度）；需要跨 Agent 共享素材时 |
+| 执行编排 | ① 按「共享知识登记 SOP」复制到 Knowledge/business/ → ② 全局索引登记 → ③ 通知 Nova → ④ 检索共享域素材（README §四） |
+| 产出/出口 | 共享域文件 + 全局索引条目 + 通知记录 |
+| 依赖数据 | ~/NovaShared/README_共享知识中枢.md、Knowledge/business/、全局索引（material_index.py） |
+
+---
+
+## 三、共享知识登记 SOP（全局知识共享机制）
+
+> 上位：`~/NovaShared/README_共享知识中枢.md`（必读）。2026-08-13 韩工定：整体一盘棋，各自维护各自负责的部分，Nova 统筹管理。
+> 我的共享域：`~/NovaShared/Knowledge/business/`（经营合规域：法规库摘要/平台规则/财务人事制度）。
+
+| 步骤 | 动作 |
+|:---:|:-----|
+| ① | 产生可复用沉淀（经营合规类知识；私有数据除外） |
+| ② | 复制到 `~/NovaShared/Knowledge/business/{分类}/` |
+| ③ | 向全局索引登记：`python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py add --name {文件名} --type {类型} --category {分类} --agent lina --domain business --share_level shared --location {绝对路径} --entity "{实体:方面,...}"` |
+| ④ | sessions_send 通知 Nova（摘要：登记了什么） |
+
+**检索入口（所有 Agent 找素材/参考的统一入口）：**
+
+```bash
+python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py search --kw {关键词} [--agent lina] [--domain business] [--share_level shared]
+```
+
+**边界：** 私有数据（供应商资料/商品资料/运营数据/配置）不共享；索引为单一权威，找素材先查索引，不靠记忆/转发（README §五）。
+
 ---
 
 ## 自检清单（每次链路变更后执行）
 
 | 项 | 标准 |
 |:---|:-----|
-| 覆盖 | 全部能力域：6 业务域 + 9 工具域，无遗漏 |
+| 覆盖 | 全部能力域：6 业务域 + 10 工具域，无遗漏 |
 | 引用有效 | 能力 key 与 skills-index.md 一一对应，无失效引用 |
 | 出口正确 | output/{部门}/ 与 TOOLS.md 目录一致 |
 | 联动 | 能力变更时同步更新本文件 + skills-index.md + 02_RUNTIME_INDEX_LOG.md |
@@ -191,4 +222,5 @@
 
 | 日期 | 变更内容 | 定稿人 |
 |:----|:--------|:------|
+| 2026-08-13 | 新增「共享知识登记 SOP」+ 工具链路 #16 共享知识中枢（knowledge-share）（韩工定：多智能体知识共享机制，整体一盘棋，Nova 统筹） | 韩工指令 / Lina 执行 |
 | 2026-08-13 | 初始定稿：15 条链路（6 业务域 + 9 工具域），自持执行约定 + 自检清单 | 韩工指令 / Lina 执行 |
