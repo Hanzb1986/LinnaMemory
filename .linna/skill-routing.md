@@ -233,7 +233,7 @@ python3 $PY update --id {id} --field {字段} --value {新值}
 python3 $PY remove --id {id}
 ```
 
-> 注：共建参数脚本实际为 `--co_build`（下划线）；README §6.4 示例写作 --co-build，同义。
+> 注：README §6.4 警告勿用 --co-build；脚本参数为 --co_build（下划线）。
 
 ### 4.2 共建申报清单（本地记录，申报 Nova 登记入 Index/co-build.md）
 
