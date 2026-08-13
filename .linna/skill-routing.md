@@ -208,44 +208,32 @@ python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_
 
 ---
 
-## 四、知识共享与共建处理（独立操作专节）
+## 四、知识共享与共建处理（引用式）
 
-> **2026-08-13 韩工定：每个 Agent 都应该知道怎么处理共享+共建，不依赖问 Nova。** 上位：`~/NovaShared/README_共享知识中枢.md`（§三/§3.1/§3.2/§六）。本专节完整内化，可独立操作。
+> **共享/维护/共建机制遵循 `~/NovaShared/README_共享知识中枢.md`（v1.0，2026-08-13），以该文件为准；升级只改该文件，引用自动同步。** 规则性内容（登记契机 4 类/生命周期责任表/共建规则/边界）见 README §3.1/§3.2/§六/§五，本节不复制。本节仅保留：本地操作命令速查 + 我的共建申报。
 
-### 4.1 共享处理（登记契机 4 类 → 提升 → 登记 → 通知）
-
-| 步骤 | 动作 |
-|:---:|:-----|
-| ① 判断契机 | 可复用沉淀 / 跨 Agent 可复用价值 / 韩工要求共享 → 共享；纯私有（临时文件、过程稿、仅自用）→ 不共享（可登记 private） |
-| ② 写入共享域 | 复制到 `~/NovaShared/Knowledge/business/{分类}/`（我的域，仅我维护） |
-| ③ 全局索引登记 | `python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py add --name {文件名} --type {类型} --category {分类} --agent lina --domain business --share_level shared --location {绝对路径} --entity "{实体:方面,...}"` |
-| ④ 通知 Nova | sessions_send（摘要：登记了什么） |
-
-### 4.2 生命周期维护（更新/删除/失效必同步索引）
-
-| 事件 | 动作 |
-|:---|:-----|
-| 共享文件更新 | 更新共享文件 + `update --id {id} --field note --value 更新说明` |
-| 共享文件删除/废弃 | 删除共享文件 + `remove --id {id}`（或 `update --id {id} --field status --value unavailable`） |
-| 共享文件失效（源丢失） | 通知域主处理；Nova scan 自动标记 unavailable |
-| 登记错误/重复 | 通知 Nova 仲裁，Nova remove/update 修正 |
-| 索引-文件不一致 | Nova 巡检派工域主修复 |
-
-### 4.3 共建规则（先查后建/标记/通知/仲裁）
-
-1. **先查后建**：共建前先 `search --kw` 查全局索引去重；已有则补建/更新，不重复新建
-2. **共建标记**：登记带 `--co_build {主建},{共建}`（脚本实际参数为下划线；README §6.4 示例写作 --co-build，同义）
-3. **变更通知**：共建资料更新/删除 → sessions_send 通知所有共建者，防止版本不同步
-4. **冲突仲裁**：同一资料多方修改 → Nova 裁决（保留主建者版本，共建者补充）；未经裁决不得覆盖主建者版本
-5. **去重优先**：发现重复登记 → 通知 Nova，Nova 合并
-
-### 4.4 检索入口（找素材/参考统一入口）
+### 4.1 操作命令速查（本地保留，操作时不依赖再读文档）
 
 ```bash
-python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py search --kw {关键词} [--agent lina] [--domain business] [--share_level shared] [--format json]
+# 脚本路径
+PY=~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py
+
+# 登记（共享/共建）：
+python3 $PY add --name {文件名} --type {类型} --category {分类} --agent lina --domain business --share_level shared [--co_build {主建},{共建}] --location {绝对路径} --entity "{实体:方面,...}"
+
+# 检索（找素材/参考先查索引）：
+python3 $PY search --kw {关键词} [--agent lina] [--domain business] [--share_level shared] [--format json]
+
+# 更新（共享文件内容变更后同步）：
+python3 $PY update --id {id} --field {字段} --value {新值}
+
+# 删除（共享文件删除/废弃后同步）：
+python3 $PY remove --id {id}
 ```
 
-### 4.5 共建申报清单（申报 Nova 登记入 Index/co-build.md）
+> 注：共建参数脚本实际为 `--co_build`（下划线）；README §6.4 示例写作 --co-build，同义。
+
+### 4.2 共建申报清单（本地记录，申报 Nova 登记入 Index/co-build.md）
 
 | 资料 | 类型 | 主建 | 共建 | 理由 |
 |:---|:---|:---|:---|:---|
@@ -270,6 +258,7 @@ python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_
 
 | 日期 | 变更内容 | 定稿人 |
 |:----|:--------|:------|
+| 2026-08-13 | 专节四改引用式：删除复制内容（契机表/生命周期表/共建规则），保留命令速查 + 共建申报；引用 README v1.0（韩工定：单一权威源，升级自动同步） | 韩工指令 / Lina 执行 |
 | 2026-08-13 | 新增专节「四、知识共享与共建处理」：共享处理/生命周期/共建规则/检索入口/共建申报清单（README §六 共建机制内化） | 韩工指令 / Lina 执行 |
 | 2026-08-13 | SOP 补充生命周期维护引用：按 README §3.2 执行（更新/删除同步索引），登记契机见 §3.1 | 韩工指令 / Lina 执行 |
 | 2026-08-13 | 新增「共享知识登记 SOP」+ 工具链路 #16 共享知识中枢（knowledge-share）（韩工定：多智能体知识共享机制，整体一盘棋，Nova 统筹） | 韩工指令 / Lina 执行 |
