@@ -204,6 +204,7 @@ python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_
 ```
 
 **边界：** 私有数据（供应商资料/商品资料/运营数据/配置）不共享；索引为单一权威，找素材先查索引，不靠记忆/转发（README §五）。
+**生命周期维护：** 共享文件更新/删除/失效/登记错误/索引不一致，按 README §3.2 执行（更新/删除同步索引，谁登记谁负责，Nova 统筹仲裁）；登记契机 4 类见 README §3.1。
 
 ---
 
@@ -222,5 +223,6 @@ python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_
 
 | 日期 | 变更内容 | 定稿人 |
 |:----|:--------|:------|
+| 2026-08-13 | SOP 补充生命周期维护引用：按 README §3.2 执行（更新/删除同步索引），登记契机见 §3.1 | 韩工指令 / Lina 执行 |
 | 2026-08-13 | 新增「共享知识登记 SOP」+ 工具链路 #16 共享知识中枢（knowledge-share）（韩工定：多智能体知识共享机制，整体一盘棋，Nova 统筹） | 韩工指令 / Lina 执行 |
 | 2026-08-13 | 初始定稿：15 条链路（6 业务域 + 9 工具域），自持执行约定 + 自检清单 | 韩工指令 / Lina 执行 |
