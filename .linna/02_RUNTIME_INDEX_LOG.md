@@ -9,6 +9,7 @@
 
 | 日期 | 时间 | 事件 |
 |:---:|:----|:----|
+| 08-18 | — | **名下停用 cron 全部删除（韩工 17:57 定：不运行的定时任务直接删，不留槽位，Nova 指令）** — 7 个 cron 经 openclaw cron rm 全部删除并双复核（CLI 列表 + sqlite 均 0）：Lina Git Autosync / lina-business-operations / lina-finance-monitor / lina-legal-deep-study / lina-legal-monitor / lina-morning-brief / lina-product-quality-audit。01 §15.3 登记表同步清空。脚本化改造上线时重新创建（morning-brief 样板已就绪）。已 git commit+push。 |
 | 08-18 | — | **lina-morning-brief 脚本化改造（样板，Nova 授权 2026-08-18）** — 按方法论 §三/§五：①新增 scripts/cron/lina_morning_brief_prep.sh（早报数据准备：系统就绪状态/法规监测/待办/git，chmod 755，产出 Lina/运营数据/早报数据准备_当日.md）②skill-routing.md scheduler 链路标注脚本入口，模型只 read 预产出文件不自行查询 ③cron payload_message 更新为脚本化版流程 ④§五 比对结论：模型版历史 16 次运行 0 次成功（全部超时 model-call-started，实证改造必要）；脚本版实际运行产出，7 项数据源逐项核对一致（实体60/kb-index6/法规15/快照1/配置空/待办5/git b808b4e）；修复待办行号残留格式问题 1 处；待验证点：次日 09:00 实跑后确认推送效果。已 git commit+push。待 Nova 确认后按原排期恢复启用。 |
 | 08-18 | — | **共享中枢目录收拢同步（韩工 2026-08-18 定，README v1.2）** — ~/NovaShared/ 根目录仅保留 OutPut/ 与 协作区/；Inbox/Index/Knowledge/Sync/README 全部移入 协作区/，路径前缀统一 `~/NovaShared/协作区/`。已同步更新：skill-routing.md（总索引/上位引用/我的共享域/登记 SOP/引用行 → 协作区路径 + README 版本升 v1.2）；skills-index.md（knowledge-share 路径）。OutPut 引用保留根目录不变；索引登记 location（Nova 已同步 38 条）已核对为协作区新路径。已 git commit+push。 |
 | 08-13 | — | **共享机制改引用式（韩工定：单一权威源，升级自动同步）** — README_共享知识中枢.md 升 v1.0（8 节：〇引用方式/一~七）。skill-routing.md 四专节改为引用式：删除复制的契机表/生命周期表/共建规则，节首加引用行「遵循 README v1.0，升级只改该文件」；保留本地命令速查（add/search/update/remove）+ 共建申报清单。已 git commit+push。 |

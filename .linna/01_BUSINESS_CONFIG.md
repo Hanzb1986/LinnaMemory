@@ -765,16 +765,7 @@ Nova 派发任务时附带以下元数据：
 
 ### 15.3 当前 Lina 已注册 cron（纳入统一排期表）
 
-| 任务 | 排期 | 备注 |
-|:----|:-----|:-----|
-| lina-legal-deep-study | 每日 00:30 | 通过冲突检测 ✅ |
-| lina-morning-brief | 每日 09:00 | 通过冲突检测 ✅ |
-| lina-business-operations | 周五 04:00 | 通过冲突检测 ✅ |
-| lina-legal-monitor | 周一 00:00 | 通过冲突检测 ✅ |
-| lina-finance-monitor | 周二 01:00 | 通过冲突检测 ✅ |
-| lina-product-quality-audit | 周三 02:00 | 通过冲突检测 ✅ |
-
-> ~~Lina Git Autosync（*/5 * * * *）~~ — 已禁用（2026-07-08，高频agentTurn违规，待Nova处理）
+> ~~2026-08-18 韩工定：不运行的定时任务直接删，不留槽位。~~ **名下 7 个停用 cron 已全部删除（Nova 指令 2026-08-18）：Lina Git Autosync / lina-business-operations / lina-finance-monitor / lina-legal-deep-study / lina-legal-monitor / lina-morning-brief / lina-product-quality-audit。** 脚本化改造上线时重新创建（lina-morning-brief 样板已完成脚本化，待 Nova 确认后重建）。当前 Lina 名下无 cron。
 
 ### 15.4 违规后果
 
