@@ -765,7 +765,14 @@ Nova 派发任务时附带以下元数据：
 
 ### 15.3 当前 Lina 已注册 cron（纳入统一排期表）
 
-> ~~2026-08-18 韩工定：不运行的定时任务直接删，不留槽位。~~ **名下 7 个停用 cron 已全部删除（Nova 指令 2026-08-18）：Lina Git Autosync / lina-business-operations / lina-finance-monitor / lina-legal-deep-study / lina-legal-monitor / lina-morning-brief / lina-product-quality-audit。** 脚本化改造上线时重新创建（lina-morning-brief 样板已完成脚本化，待 Nova 确认后重建）。当前 Lina 名下无 cron。
+> ~~2026-08-18 韩工定：不运行的定时任务直接删，不留槽位。~~ 名下 7 个停用 cron 已全部删除（Nova 指令 2026-08-18）。
+
+| 任务 | 排期 | 备注 |
+|:----|:-----|:-----|
+| lina-morning-brief | 每日 09:00 | ✅ 已启用（脚本化改造版，2026-08-18 重建，新 ID 6ad9a050） |
+
+> **后续推进流程（Nova 定 2026-08-18）**：需要哪个任务 → 脚本化改造 → 改造完成时新建 cron 启用（删旧建新，不用旧 ID）。待脚本化：legal-deep-study → legal-monitor → product-quality-audit → business-operations → finance-monitor。
+> ~~Lina Git Autosync~~ — 已删（git-autosync.sh 脚本覆盖同步机制，无需重建）
 
 ### 15.4 违规后果
 
