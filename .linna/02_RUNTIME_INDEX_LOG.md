@@ -9,6 +9,7 @@
 
 | 日期 | 时间 | 事件 |
 |:---:|:----|:----|
+| 08-18 | — | **business-operations 脚本化改造完成并新建启用（第 5 个，按序推进）** — ①新增 scripts/cron/business_ops_prep.sh（9 业务台账目录盘点 + 历史简报 + 开店待办，755）②实跑验证：9 目录盘点完整（运营数据 2/商品 0/供应商 0/finance 0/hr 0/product 2/quality 3/business 0/法规监测 2），历史简报 1 份核对一致 ③新建 cron（ID 5349d42d，周五 04:00，投递 none + payload 显式 message 参数，时隙无冲突）④01 §15.3 登记。首跑 08-21。已 git commit+push。 |
 | 08-18 | — | **product-quality-audit 脚本化改造完成并新建启用（第 4 个，按序推进）** — ①新增 scripts/cron/quality_audit_prep.sh（数据源盘点：质量台账/产品档案/平台规则/历史报告/运营数据 + 距今天数计算，755）②实跑验证：台账 2 份（最新 07-08 距 41 天）/产品档案 2/平台规则 0/报告 1，核对一致 ③skill-routing 风控品控链路标注脚本入口 ④新建 cron（ID 9951d0b7，周三 02:00，投递 none + payload 显式 message 参数，时隙无冲突）⑤01 §15.3 登记。首跑次日 02:00。已 git commit+push。 |
 | 08-18 | — | **legal-monitor 脚本化改造完成并新建启用（第 3 个，按序推进）** — ①新增 scripts/cron/legal_monitor_prep.sh（源站可达性探测 curl 间隔 30 秒合规 + 本地库状态盘点 + 模型执行约定，755）②实跑验证：5 源全部 HTTP 200 可达、历史报告 1 份、kb-index-laws 1 份，产出完整 ③skill-routing 平台规则监测链路标注脚本入口 ④新建 cron（ID f542099e，周一 00:00，投递 none + payload 显式 message 参数，时隙无冲突）⑤01 §15.3 登记。首跑 08-24。已 git commit+push。 |
 | 08-18 | — | **微信投递修复（Nova 答复：GitHub #111952 announce 投递 ret=-2 已知 bug）** — 两个 cron（morning-brief/legal-deep-study）delivery 改 none（--no-deliver），改为模型 agentTurn 内 message(action=send) 显式投递：channel=openclaw-weixin、target=o9cq807kYZOgi_Ej_2PUcxS1xsJ0@im.wechat（原始混合大小写，小写 ret=-3）、accountId=bb1779004873-im-bot（缺则 plugin not loaded）。payload 已写明三项参数（与 Nova 侧每周主线汇总修复一致）。实跑验证：明日 09:00 morning-brief 首跑。 |
