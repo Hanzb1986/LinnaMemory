@@ -2,7 +2,11 @@
 
 ## 📂 输入/输出目录（六部门企业架构）
 
-### Lina/（韩工投递 → Lina读取处理）
+> 📢 2026-08-12 架构变更：所有资料以 workspace 为主存储。`Lina/` = `~/.openclaw/workspace-lina/Lina/`（投料口+主存储），共享目录仅保留 `~/NovaShared/OutPut/` 输出镜像。
+
+### Lina/（主存储 · 韩工投递 → Lina读取处理）
+
+> 完整路径：`~/.openclaw/workspace-lina/Lina/`
 
 | 目录 | 用途 |
 |:----|:------|
@@ -35,7 +39,7 @@
 
 | 目录 | 用途 | 规则 |
 |:----|:-----|:-----|
-| **Lina/** | 我的资料仓库 | 原材料、我的分析笔记、中间产物，全部放这里 |
+| **Lina/**（`~/.openclaw/workspace-lina/Lina/`） | 我的资料仓库 | 原材料、我的分析笔记、中间产物，全部放这里 |
 | **output/** | 韩工取文件的窗口 | **只放韩工主动找我要的成品文件**，其他一概不放 |
 | 共享 OutPut | 同步至 `~/NovaShared/OutPut/` | **必须和本地 output 完全一致**，不同步input里的东西。旧共享路径 `/mnt/hgfs/ElliShared/` 已废弃 |
 

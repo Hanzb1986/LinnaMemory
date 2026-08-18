@@ -31,7 +31,7 @@
 | 企业知识库与记忆 `memory-kb` | 长期记忆（配置/供应商/商品数据）、快照、索引（memory/ + knowledge/） | 在用 |
 | 网络检索与外部核实 `web-research` | 平台规则、法规原文、行业资料检索与来源核实 | 在用 |
 | 多智能体协作 `agent-collab` | 任务同步 Nova、跨 Agent 请求协作（铁律八）、咬尾防御通信协议（铁律九） | 在用 |
-| 共享知识中枢 `knowledge-share` | 可复用经营合规沉淀提升至 ~/NovaShared/Knowledge/business/，全局索引登记与检索（README_共享知识中枢） | 在用 |
+| 共享知识中枢 `knowledge-share` | 可复用经营合规沉淀提升至 ~/NovaShared/协作区/Knowledge/business/，全局索引登记与检索（README_共享知识中枢） | 在用 |
 | Git 变更管理 `git-sync` | 重要配置/文件变更后会话内手动 push（cron 已禁用，TOOLS.md） | 在用 |
 
 ---

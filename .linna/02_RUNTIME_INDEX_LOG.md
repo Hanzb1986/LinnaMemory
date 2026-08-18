@@ -9,6 +9,7 @@
 
 | 日期 | 时间 | 事件 |
 |:---:|:----|:----|
+| 08-18 | — | **共享中枢目录收拢同步（韩工 2026-08-18 定，README v1.2）** — ~/NovaShared/ 根目录仅保留 OutPut/ 与 协作区/；Inbox/Index/Knowledge/Sync/README 全部移入 协作区/，路径前缀统一 `~/NovaShared/协作区/`。已同步更新：skill-routing.md（总索引/上位引用/我的共享域/登记 SOP/引用行 → 协作区路径 + README 版本升 v1.2）；skills-index.md（knowledge-share 路径）。OutPut 引用保留根目录不变；索引登记 location（Nova 已同步 38 条）已核对为协作区新路径。已 git commit+push。 |
 | 08-13 | — | **共享机制改引用式（韩工定：单一权威源，升级自动同步）** — README_共享知识中枢.md 升 v1.0（8 节：〇引用方式/一~七）。skill-routing.md 四专节改为引用式：删除复制的契机表/生命周期表/共建规则，节首加引用行「遵循 README v1.0，升级只改该文件」；保留本地命令速查（add/search/update/remove）+ 共建申报清单。已 git commit+push。 |
 | 08-13 | — | **多智能体知识共享机制落地（韩工 2026-08-13 定：整体一盘棋，Nova 统筹）** — ①已读 ~/NovaShared/README_共享知识中枢.md ②经营合规域共享：提升 11 份可复用沉淀至 ~/NovaShared/Knowledge/business/（法规库摘要 8 份 308 部学习笔记 / 财税合规 2 份简报+档案 / 制度文档 1 份 01_BUSINESS_CONFIG）③全局索引登记 11 条（#132~#142，agent=lina domain=business share_level=shared），另关联实体 5 个（#138 电商法/消保法/广告法/个保法/网安法）④skill-routing.md 新增「共享知识登记 SOP」+ 工具链路 #16 共享知识中枢；skills-index.md 新增 knowledge-share 能力。自检：检索入口验证可用（kw 检索命中）。已 git commit+push。 |
 | 08-13 | — | **新增专业能力链路（韩工 2026-08-13 指令补充）** — 新建 .linna/skill-routing.md：15 条链路（六部门业务 6 域 + 工具能力 9 域），每条含 能力引用/入口触发/执行编排/产出出口/依赖数据/缺能力自建；自持执行（Nova 只调度不插手链路细节），与 skills-index.md 联动。自检：15 个能力 key 与 skills-index 完全一致，出口目录 6 个与 TOOLS.md 一致。已 git commit+push。 |

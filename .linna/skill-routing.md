@@ -19,7 +19,7 @@
 | 法务前置 | 全部经营链路先过铁律六法律校验，P0-P3 分级 |
 | 风控兜底 | 全部经营链路过五级熔断检查 |
 
-> **跨 Agent 共享规则总索引：`~/NovaShared/Index/shared-rules-index.md`（Nova 维护，2026-08-13）——规则疑问先查总索引定位权威源，遵循单一权威源+引用模式，升级自动同步。**
+> **跨 Agent 共享规则总索引：`~/NovaShared/协作区/Index/shared-rules-index.md`（Nova 维护，2026-08-13）——规则疑问先查总索引定位权威源，遵循单一权威源+引用模式，升级自动同步。**
 
 ---
 
@@ -183,19 +183,19 @@
 | 入口触发 | 产生可复用经营合规沉淀（法规库摘要/平台规则/财务人事制度）；需要跨 Agent 共享素材时 |
 | 执行编排 | ① 按「共享知识登记 SOP」复制到 Knowledge/business/ → ② 全局索引登记 → ③ 通知 Nova → ④ 检索共享域素材（README §四） |
 | 产出/出口 | 共享域文件 + 全局索引条目 + 通知记录 |
-| 依赖数据 | ~/NovaShared/README_共享知识中枢.md、Knowledge/business/、全局索引（material_index.py） |
+| 依赖数据 | ~/NovaShared/协作区/README_共享知识中枢.md、协作区/Knowledge/business/、全局索引（material_index.py） |
 
 ---
 
 ## 三、共享知识登记 SOP（全局知识共享机制）
 
-> 上位：`~/NovaShared/README_共享知识中枢.md`（必读）。2026-08-13 韩工定：整体一盘棋，各自维护各自负责的部分，Nova 统筹管理。
-> 我的共享域：`~/NovaShared/Knowledge/business/`（经营合规域：法规库摘要/平台规则/财务人事制度）。
+> 上位：`~/NovaShared/协作区/README_共享知识中枢.md`（必读）。2026-08-13 韩工定：整体一盘棋，各自维护各自负责的部分，Nova 统筹管理。
+> 我的共享域：`~/NovaShared/协作区/Knowledge/business/`（经营合规域：法规库摘要/平台规则/财务人事制度）。
 
 | 步骤 | 动作 |
 |:---:|:-----|
 | ① | 产生可复用沉淀（经营合规类知识；私有数据除外） |
-| ② | 复制到 `~/NovaShared/Knowledge/business/{分类}/` |
+| ② | 复制到 `~/NovaShared/协作区/Knowledge/business/{分类}/` |
 | ③ | 向全局索引登记：`python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_index.py add --name {文件名} --type {类型} --category {分类} --agent lina --domain business --share_level shared --location {绝对路径} --entity "{实体:方面,...}"` |
 | ④ | sessions_send 通知 Nova（摘要：登记了什么） |
 
@@ -212,7 +212,7 @@ python3 ~/.openclaw/workspace/skills/material-index-maintainer/scripts/material_
 
 ## 四、知识共享与共建处理（引用式）
 
-> **共享/维护/共建机制遵循 `~/NovaShared/README_共享知识中枢.md`（v1.0，2026-08-13），以该文件为准；升级只改该文件，引用自动同步。** 规则性内容（登记契机 4 类/生命周期责任表/共建规则/边界）见 README §3.1/§3.2/§六/§五，本节不复制。本节仅保留：本地操作命令速查 + 我的共建申报。
+> **共享/维护/共建机制遵循 `~/NovaShared/协作区/README_共享知识中枢.md`（v1.2，2026-08-18），以该文件为准；升级只改该文件，引用自动同步。** 规则性内容（登记契机 4 类/生命周期责任表/共建规则/边界）见 README §3.1/§3.2/§六/§五，本节不复制。本节仅保留：本地操作命令速查 + 我的共建申报。
 
 ### 4.1 操作命令速查（本地保留，操作时不依赖再读文档）
 
