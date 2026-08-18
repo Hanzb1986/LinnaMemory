@@ -770,8 +770,9 @@ Nova 派发任务时附带以下元数据：
 | 任务 | 排期 | 备注 |
 |:----|:-----|:-----|
 | lina-morning-brief | 每日 09:00 | ✅ 已启用（脚本化改造版，2026-08-18 重建，新 ID 6ad9a050） |
+| lina-legal-deep-study | 每日 00:30 | ✅ 已启用（脚本化改造版，2026-08-18 新建，新 ID 9465578e，首跑次日 00:30） |
 
-> **后续推进流程（Nova 定 2026-08-18）**：需要哪个任务 → 脚本化改造 → 改造完成时新建 cron 启用（删旧建新，不用旧 ID）。待脚本化：legal-deep-study → legal-monitor → product-quality-audit → business-operations → finance-monitor。
+> **后续推进流程（Nova 定 2026-08-18）**：需要哪个任务 → 脚本化改造 → 改造完成时新建 cron 启用（删旧建新，不用旧 ID）。待脚本化：legal-monitor → product-quality-audit → business-operations → finance-monitor。
 > ~~Lina Git Autosync~~ — 已删（git-autosync.sh 脚本覆盖同步机制，无需重建）
 
 ### 15.4 违规后果
