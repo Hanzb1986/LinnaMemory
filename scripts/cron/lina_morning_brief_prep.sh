@@ -7,7 +7,7 @@ set -uo pipefail
 WS=/home/hans/.openclaw/workspace-lina
 TODAY=$(date +%Y-%m-%d)
 NOW=$(date '+%Y-%m-%d %H:%M')
-PREP="$WS/Lina/运营数据/早报数据准备_${TODAY}.md"
+PREP="$WS/Lina/运营数据/早报数据准备.md"
 
 # ---- ① 系统就绪状态 ----
 ENTITIES=$(ls "$WS/memory/entities/"*.md 2>/dev/null | wc -l)
