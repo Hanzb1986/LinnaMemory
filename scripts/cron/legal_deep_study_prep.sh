@@ -17,15 +17,26 @@ BATCHES=$(ls "$NOTES_DIR"/每日批量学习_2026-06-30*.md 2>/dev/null | sed "s
 
 # ---- 第二轮进度：核心法精读 ----
 SECOND_ROUND_FILE=$(ls -t "$WS/output/学习笔记/每日批量学习_2026-07-04.md" 2>/dev/null | head -1)
-SECOND_DONE="10/14（电子商务法/消费者权益保护法/广告法/产品质量法/反不正当竞争法/个人信息保护法/数据安全法/网络安全法/民法典·合同侵权/民事诉讼法）"
-SECOND_REMAIN="食品安全法 / 商标法 / 著作权法 / 专利法"
+SECOND_BASE="电子商务法/消费者权益保护法/广告法/产品质量法/反不正当竞争法/个人信息保护法/数据安全法/网络安全法/民法典·合同侵权/民事诉讼法"
+# 已精读判定：以 output/学习笔记 已产出精读笔记的标题为准（确定性来源、跨日累计不丢失）。
+# 注：原「仅看任务单上一日 ✅」方案在任务单每日重建后会遗忘历史，导致重复建议已学法（2026-08-21 修复）。
+DONE_LAWS=$(grep -hE '^# ' "$WS/output/学习笔记"/每日批量学习_2026-08-*.md 2>/dev/null | grep -oE '食品安全法|商标法|著作权法|专利法' | sort -u || true)
+DONE_STR=$(echo "$DONE_LAWS" | tr '\n' ' ' | sed 's/^ *//; s/ *$//; s/  */ /g' | sed 's/ / \/ /g')
+DONE_COUNT=$(( 10 + $(echo "$DONE_LAWS" | grep -c . || true) ))
+REMAIN_LAWS=""
+for law in 食品安全法 商标法 著作权法 专利法; do
+  if echo "$DONE_LAWS" | grep -q "$law"; then continue; fi
+  [ -n "$REMAIN_LAWS" ] && REMAIN_LAWS="${REMAIN_LAWS} / "
+  REMAIN_LAWS="${REMAIN_LAWS}${law}"
+done
+SECOND_DONE="${DONE_COUNT}/14（${SECOND_BASE}${DONE_STR:+ / ${DONE_STR}}）"
+SECOND_REMAIN="${REMAIN_LAWS:-（无，14 部已全部精读，建议进入第三轮或韩工指定方向）}"
 
 # ---- 今日待学建议：从剩余 4 部中取（按固定顺序，每日 1 部；全部完成后提示进入下一轮） ----
-# 已精读判定：以任务单自身「今日待学建议」行的 ✅ 标记为准（模型完成后追加），避免 grep 误判提及字样
+# 已精读判定：同上 DONE_LAWS（笔记标题），模型完成后再在任务单对应法名后追加 ✅（供人工/日志核对）
 SUGGEST=""
-MARKED=$(grep -oE '^\*\*[^*]+\*\* ✅' "$PREP" 2>/dev/null | sed 's/^\*\*//; s/\*\* ✅//' || true)
 for law in 食品安全法 商标法 著作权法 专利法; do
-  if echo "$MARKED" | grep -q "$law"; then
+  if echo "$DONE_LAWS" | grep -q "$law"; then
     continue
   fi
   SUGGEST="$law"

@@ -41,3 +41,11 @@
 ### 📬 智能体通信
 
 四智能体（Nova/Ellie/Drama/Lina）间通过 `sessions_send` 直接通信。不再使用文件总线方式。
+
+### 🏷️ 跨 Agent 消息转达格式（2026-08-20 韩工 定）
+
+跨 Agent 消息转达给 韩工 时，消息头必须带来源 Agent 前缀，格式：`「{标准名}：{内容}」`。
+- 标准名按 IDENTITY.md：Nova / Eva / Ellie / Drama / Lina
+- 同一消息内多条不同来源的转达，须逐条标注各自来源
+- 适用场景：我（Lina）向 韩工 转达其他 Agent（Nova/Eva/Ellie/Drama 等）的消息/结论/请求时
+- 同步来源：Nova 于 2026-08-20 14:57 转达 韩工 定稿
