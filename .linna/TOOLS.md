@@ -41,7 +41,7 @@
 |:----|:-----|:-----|
 | **Lina/**（`~/.openclaw/workspace-lina/Lina/`） | 我的资料仓库 | 原材料、我的分析笔记、中间产物，全部放这里 |
 | **output/** | 韩工取文件的窗口 | **只放韩工主动找我要的成品文件**，其他一概不放 |
-| 共享 OutPut | 同步至 `~/NovaShared/OutPut/` | **必须和本地 output 完全一致**，不同步input里的东西。旧共享路径 `/mnt/hgfs/ElliShared/` 已废弃 |
+| 共享 OutPut | 同步至 `~/NovaShared/OutPut/` | **仅交付文档（.html/.pdf/.csv/.docx）镜像；.md 底稿/笔记不镜像，仅本地 output 留存**。旧共享路径 `/mnt/hgfs/ElliShared/` 已废弃 |
 
 **死记：不要往output放任何韩工没找我要的东西。**
 

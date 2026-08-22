@@ -17,7 +17,7 @@
 ### 规则变更（2026-08-12）
 1. **我的资料主存储 = `~/.openclaw/workspace-lina/Lina/`**（原共享 Lina 投料口已清空停用）
 2. 别人投料给我：文件放入 `~/.openclaw/workspace-lina/Lina/`（投料口）
-3. 输出文件：本地写入 `workspace-lina/output/`，同步镜像到 `~/NovaShared/OutPut/`
+3. 输出文件：本地写入 `workspace-lina/output/`，同步镜像到 `~/NovaShared/OutPut/`（**仅交付文档 .html/.pdf/.csv/.docx；.md 底稿/笔记不镜像**）
 4. 输出格式约束（与 .linna/TOOLS.md 格式标准一致）：`.html`/`.pdf`/`.csv`（表单类首选）/`.docx`，`.xlsx` 仅韩工明确要求时使用，禁止 `.md` 进入 OutPut
 5. 旧 VMWare 共享路径 `/mnt/hgfs/ElliShared/` **已废弃**，不再使用
 
@@ -35,7 +35,7 @@
 
 ### 输出文件三步规则（维持）
 ① 生成文件到自身 `workspace-lina/output/`
-② 同步拷贝到共享 `~/NovaShared/OutPut/`
+② 同步拷贝到共享 `~/NovaShared/OutPut/`（仅交付文档 .html/.pdf/.csv/.docx；.md 底稿/笔记不镜像，只留本地）
 ③ 微信渠道时额外用 message 工具发送附件（仅 channel=openclaw-weixin 时触发）
 
 ### 📬 智能体通信

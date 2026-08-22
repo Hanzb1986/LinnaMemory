@@ -68,7 +68,7 @@ done
   echo "## 四、执行约定（模型部分）"
   echo ""
   echo "1. 基于本文件 + web 检索，生成《法规变更对比报告》至 output/法规监测/法规变更对比报告_\${TODAY}.md（格式沿用 2026-07-06 报告）"
-  echo "2. 同步 ~/NovaShared/OutPut/；变更分级 P0-P3 + 影响店铺运营动作"
+  echo "2. 产出《法规变更对比报告》为 .md，仅本地留存 output/法规监测/，不同步 ~/NovaShared/OutPut/（OutPut 只放交付文档 .html/.pdf/.csv/.docx；如需共享走共享知识中枢登记：material_index.py add --agent lina --domain business --share_level shared + 通知 Nova）；变更分级 P0-P3 + 影响店铺运营动作"
   echo "3. 完成后用 message(action=send) 显式投递简报给韩工：channel=openclaw-weixin、target=o9cq807kYZOgi_Ej_2PUcxS1xsJ0@im.wechat（原始混合大小写，小写 ret=-3）、accountId=bb1779004873-im-bot"
 } > "$PREP"
 

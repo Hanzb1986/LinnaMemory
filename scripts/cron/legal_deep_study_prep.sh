@@ -75,7 +75,7 @@ fi
   echo "## 五、执行约定（模型部分）"
   echo ""
   echo "1. 精读今日待学法（条款级风险拆解/司法解释联动/罚则量化/业务 SOP），沿用 output/学习笔记/每日批量学习_2026-07-04.md 格式"
-  echo "2. 产出：output/学习笔记/每日批量学习_\${TODAY}.md（同步 ~/NovaShared/OutPut/）"
+  echo "2. 产出：output/学习笔记/每日批量学习_\${TODAY}.md（仅本地留存，不同步 ~/NovaShared/OutPut/；OutPut 只放交付文档 .html/.pdf/.csv/.docx。如需共享走共享知识中枢登记：material_index.py add --agent lina --domain business --share_level shared + 通知 Nova）"
   echo "3. 完成后在本文档「今日待学建议」对应法名后追加 ✅，供明日脚本跳过"
 } > "$PREP"
 

@@ -9,6 +9,7 @@
 
 | 日期 | 错误模式 | 触发条件 | 修复 | 预防 |
 |:----|:--------|:--------|:----|:----|
+| 08-22 | .md 学习笔记再次误同步共享 OutPut（复发 07-06） | legal-deep-study 产物每日批量学习_2026-08-22.md 按旧约定同步到 `NovaShared/OutPut/`，被 Nova 删除 | 全量修正：任务单/prep 脚本/数据准备 md 同步表述改为「md 仅本地留存，OutPut 只放交付文档 .html/.pdf/.csv/.docx；共享走 material_index 登记」 | 铁律·输出前自问：Hans 找我要了吗？+ md 类产出永不进 OutPut（grep 自查零容忍） |
 | 08-12 | 共享路径架构变更未及时同步 | NovaShared/Lina/ 已清空停用，主存储改 workspace | 已更新 .linna/ 全部配置（MEMORY/TOOLS/00/02） | 架构变更后立即全文件 grep -rn 自查 |
 
 ## 2026-07

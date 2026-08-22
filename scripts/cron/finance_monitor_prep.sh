@@ -54,7 +54,7 @@ OPS_CNT=$(find "$WS/Lina/运营数据/" -maxdepth 1 -type f 2>/dev/null | wc -l)
   echo "## 四、执行约定（模型部分）"
   echo ""
   echo "1. 基于本文件 + web_search/web_fetch 生成《财税政策更新简报》（沿用 output/finance/财税政策更新简报_2026-07-14.md 格式）"
-  echo "2. 更新《财税档案库更新》（output/finance/），同步 ~/NovaShared/OutPut/ 与共享域登记（knowledge-share SOP）"
+  echo "2. 更新《财税档案库更新》（output/finance/，.md 仅本地留存，不同步 ~/NovaShared/OutPut/；OutPut 只放交付文档 .html/.pdf/.csv/.docx）。如需共享走共享知识中枢登记：material_index.py add --agent lina --domain business --share_level shared + 通知 Nova（README_共享知识中枢.md）"
   echo "3. 筹备期无收支数据时，简报侧重政策监测结果与适用性提示"
   echo "4. 完成后用 message(action=send) 显式投递简报给韩工：channel=openclaw-weixin、target=o9cq807kYZOgi_Ej_2PUcxS1xsJ0@im.wechat（原始混合大小写，小写 ret=-3）、accountId=bb1779004873-im-bot"
 } > "$PREP"

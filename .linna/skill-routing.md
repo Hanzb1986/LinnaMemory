@@ -14,7 +14,7 @@
 |:---|:-----|
 | 入口来源 | 韩工直接指令 / Nova 派工（sessions_send）/ 定时任务（scheduler）/ 实时触发（平台规则监测） |
 | 编排总则 | 取依赖数据 → 校验来源（真实性红线）→ 执行 → 自检 → 出口 → 留痕（02_RUNTIME_INDEX_LOG + git push） |
-| 出口路径 | `output/{部门}/`（成品，仅韩工主动要的）；`Lina/{部门}/`（台账/中间产物）；`~/NovaShared/OutPut/`（与 output 一致镜像） |
+| 出口路径 | `output/{部门}/`（成品，仅韩工主动要的）；`Lina/{部门}/`（台账/中间产物）；`~/NovaShared/OutPut/`（**交付文档镜像，仅 .html/.pdf/.csv/.docx；.md 底稿/笔记不镜像**） |
 | 出口格式 | 按 TOOLS.md 格式标准：html（首选）/ pdf / csv（表单数据，韩工明确要求才 xlsx）/ docx / md（底层留存） |
 | 法务前置 | 全部经营链路先过铁律六法律校验，P0-P3 分级 |
 | 风控兜底 | 全部经营链路过五级熔断检查 |
